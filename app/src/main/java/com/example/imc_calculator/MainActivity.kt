@@ -3,7 +3,7 @@ package com.example.imc_calculator
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
@@ -12,27 +12,27 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val editTextHeight = findViewById<EditText>(R.id.editTextHeight)
-        val editTextWeight = findViewById<EditText>(R.id.editTextWeight)
-        val buttonCalculate = findViewById<Button>(R.id.buttonCalculate)
+        val weightInput = findViewById<EditText>(R.id.weightInput)
+        val heightInput = findViewById<EditText>(R.id.heightInput)
+        val calculateButton = findViewById<Button>(R.id.calculateButton)
+        val imcResult = findViewById<TextView>(R.id.imcResult)
 
-        buttonCalculate.setOnClickListener {
-            val heightText = editTextHeight.text.toString()
-            val weightText = editTextWeight.text.toString()
+        calculateButton.setOnClickListener {
+            val weightText = weightInput.text.toString()
+            val heightText = heightInput.text.toString()
 
-            if (heightText.isNotEmpty() && weightText.isNotEmpty()) {
-                val height = heightText.toDoubleOrNull()
+            if (weightText.isNotEmpty() && heightText.isNotEmpty()) {
                 val weight = weightText.toDoubleOrNull()
+                val height = heightText.toDoubleOrNull()
 
-                if (height != null && weight != null && height > 0) {
+                if (weight != null && height != null && height > 0) {
                     val imc = weight / (height * height)
-                    val result = String.format("Seu IMC é %.2f", imc)
-                    Toast.makeText(this, result, Toast.LENGTH_LONG).show()
+                    imcResult.text = String.format("IMC: %.2f", imc)
                 } else {
-                    Toast.makeText(this, "Por favor, insira valores válidos.", Toast.LENGTH_SHORT).show()
+                    imcResult.text = "Por favor, insira valores válidos."
                 }
             } else {
-                Toast.makeText(this, "Por favor, preencha todos os campos.", Toast.LENGTH_SHORT).show()
+                imcResult.text = "Por favor, preencha todos os campos."
             }
         }
     }
