@@ -1,0 +1,45 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#F5F5F5">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Minha Lista de Tarefas"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="#333" />
+
+    <Button
+        android:id="@+id/addTaskButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Adicionar Nova Tarefa"
+        android:backgroundTint="#6200EE"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/reloadTasksButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Recarregar Lista"
+        android:backgroundTint="#03DAC5"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="16dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#FFFFFF"
+        android:padding="8dp"
+        android:elevation="4dp" />
+</LinearLayout>

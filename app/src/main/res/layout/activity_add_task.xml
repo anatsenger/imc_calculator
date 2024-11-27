@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/taskTitleInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Título da Tarefa" />
+
+    <EditText
+        android:id="@+id/taskDescriptionInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Descrição da Tarefa" />
+
+    <Button
+        android:id="@+id/saveTaskButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Salvar" />
+</LinearLayout>
